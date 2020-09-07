@@ -33,6 +33,7 @@ public class ScoreController {
     @FXML
     public void initialize() {
         updateScoreButton.setDisable(true);
+        updateScoreButton.getStyleClass().setAll("btn", "btn-success");
         dataSource = new StudentHardcodeDataSource();
         students = dataSource.getStudentsData();
         students.findById("6210400002").addScore(ScoreType.ASSIGNMENT, 10);
