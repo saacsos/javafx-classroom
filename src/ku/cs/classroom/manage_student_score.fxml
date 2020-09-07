@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ku.cs.classroom.controllers.ScoreController">
+   <children>
+      <TableView fx:id="studentsTable" layoutX="21.0" layoutY="63.0" prefHeight="519.0" prefWidth="332.0" />
+      <Label layoutX="120.0" layoutY="14.0" text="Student List">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <Separator layoutX="366.0" layoutY="14.0" orientation="VERTICAL" prefHeight="568.0" prefWidth="7.0" />
+      <Label layoutX="491.0" layoutY="14.0" text="Selected Student">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="400.0" layoutY="71.0" text="ID">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label fx:id="sidLabel" layoutX="463.0" layoutY="71.0" text="..." textFill="#250aff">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="400.0" layoutY="120.0" text="Name">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label fx:id="nameLabel" layoutX="483.0" layoutY="120.0" text="..." textFill="#250aff">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="541.0" layoutY="183.0" text="Score">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="400.0" layoutY="251.0" text="Assignment">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <TextField fx:id="assignmentScoreTextField" layoutX="557.0" layoutY="243.0" prefHeight="51.0" prefWidth="206.0">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </TextField>
+      <Separator layoutX="487.0" layoutY="171.0" prefWidth="200.0" />
+      <Label layoutX="401.0" layoutY="323.0" text="Attendance">
+         <font>
+            <Font size="24.0" />
+         </font></Label>
+      <TextField fx:id="attendanceScoreTextField" layoutX="557.0" layoutY="315.0" prefHeight="51.0" prefWidth="206.0">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </TextField>
+      <Label layoutX="400.0" layoutY="398.0" text="Midterm">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <TextField fx:id="midtermScoreTextField" layoutX="557.0" layoutY="390.0" prefHeight="51.0" prefWidth="206.0">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </TextField>
+      <Label layoutX="399.0" layoutY="474.0" text="Final">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <TextField fx:id="finalScoreTextField" layoutX="557.0" layoutY="466.0" prefHeight="51.0" prefWidth="206.0">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </TextField>
+      <Button fx:id="updateScoreButton" layoutX="483.0" layoutY="535.0" mnemonicParsing="false" onAction="#handleUpdateButton" text="Update Score">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
