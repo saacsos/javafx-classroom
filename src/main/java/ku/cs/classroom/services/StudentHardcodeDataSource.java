@@ -3,7 +3,9 @@ package ku.cs.classroom.services;
 import ku.cs.classroom.models.Student;
 import ku.cs.classroom.models.StudentList;
 
-public class StudentHardcodeDataSource {
+public class StudentHardcodeDataSource implements StudentDataSource {
+
+    @Override
     public StudentList getStudentsData() {
         StudentList students = new StudentList();
         students.add(new Student("6210400001", "Poirot"));
@@ -13,5 +15,10 @@ public class StudentHardcodeDataSource {
         students.add(new Student("6210400005", "ชื่อไทย"));
 
         return students;
+    }
+
+    @Override
+    public void setStudentsData(StudentList students) {
+        // do nothing
     }
 }
