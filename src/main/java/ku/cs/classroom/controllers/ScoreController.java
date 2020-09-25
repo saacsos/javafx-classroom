@@ -6,10 +6,14 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import ku.cs.classroom.models.ScoreType;
 import ku.cs.classroom.models.Student;
 import ku.cs.classroom.models.StudentList;
 import ku.cs.classroom.services.StringConfiguration;
+import ku.cs.classroom.services.StudentDataSource;
+import ku.cs.classroom.services.StudentFileDataSource;
 import ku.cs.classroom.services.StudentHardcodeDataSource;
 
 import java.util.ArrayList;
@@ -17,7 +21,7 @@ import java.util.ArrayList;
 public class ScoreController {
 
     private StudentList students;
-    private StudentHardcodeDataSource dataSource;
+    private StudentDataSource dataSource;
     private Student selectedStudent;
     private ObservableList<Student> studentObservableList;
 
@@ -29,14 +33,15 @@ public class ScoreController {
     @FXML private TextField midtermScoreTextField;
     @FXML private TextField finalScoreTextField;
     @FXML private Button updateScoreButton;
+    @FXML private ImageView sampleImage;
 
     @FXML
     public void initialize() {
+        sampleImage.setImage(new Image("/images/cat.jpg"));
         updateScoreButton.setDisable(true);
         updateScoreButton.getStyleClass().setAll("btn", "btn-success");
-        dataSource = new StudentHardcodeDataSource();
+        dataSource = new StudentFileDataSource("data", "students.csv");
         students = dataSource.getStudentsData();
-        students.findById("6210400002").addScore(ScoreType.ASSIGNMENT, 10);
         showStudentData();
 
         studentsTable.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
@@ -94,5 +99,7 @@ public class ScoreController {
         clearSelectedStudent();
         studentsTable.refresh();
         studentsTable.getSelectionModel().clearSelection();
+
+        dataSource.setStudentsData(students);
     }
 }
